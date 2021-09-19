@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter_app_clinica_web/core/models/user_model.dart';
+import 'package:flutter_app_clinica_web/core/services/auth/auth_nock_service.dart';
 
 abstract class AuthService {
   UserModel? get currentUser;
@@ -20,7 +21,8 @@ abstract class AuthService {
 
   Future<void> logout();
 
-  // factory AuthService() {
-  //   return AuthFirebaseService();
-  // }
+  factory AuthService() {
+    return AuthMockService();
+    // return AuthFirebaseService();
+  }
 }

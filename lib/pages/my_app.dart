@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_clinica_web/pages/auth_page.dart';
-import 'package:flutter_app_clinica_web/pages/home_page.dart';
+import 'package:flutter_app_clinica_web/pages/auth_or_app_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -9,9 +8,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '',
+      title: 'Projeto Clínica',
       theme: _myThemeData(),
-      home: const HomePage(),
+      home: const AuthOrAppPage(),
     );
   }
 
