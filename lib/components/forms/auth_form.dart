@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_clinica_web/components/component/user_image_picker.dart';
 import 'package:flutter_app_clinica_web/core/models/auth_form_data.dart';
+import 'package:flutter_app_clinica_web/pages/home_page.dart';
 
 class AuthForm extends StatefulWidget {
   const AuthForm({Key? key}) : super(key: key);

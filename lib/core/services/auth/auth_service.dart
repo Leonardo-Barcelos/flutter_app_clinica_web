@@ -1,7 +1,5 @@
 import 'dart:io';
 import 'package:flutter_app_clinica_web/core/models/user_model.dart';
-import 'package:flutter_app_clinica_web/core/services/auth/auth_firebase_service.dart';
-import 'package:flutter_app_clinica_web/core/services/auth/auth_mock_service.dart';
 
 abstract class AuthService {
   UserModel? get currentUser;
@@ -13,7 +11,6 @@ abstract class AuthService {
     String email,
     String password,
     File? image,
-    String? type,
   );
 
   Future<void> login(
@@ -23,8 +20,7 @@ abstract class AuthService {
 
   Future<void> logout();
 
-  factory AuthService() {
-    //return AuthFirebaseService();
-    return AuthMockService();
-  }
+  // factory AuthService() {
+  //   return AuthFirebaseService();
+  // }
 }

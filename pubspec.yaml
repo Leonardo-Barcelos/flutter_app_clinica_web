@@ -37,8 +37,6 @@ dependencies:
   # Image Picker Web
   image_picker_web: ^2.0.3+1
 
-  ### FIREBASE
-
 
 
 dev_dependencies:
