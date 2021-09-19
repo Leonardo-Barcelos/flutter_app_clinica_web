@@ -2,8 +2,7 @@
 
 Um projeto flutter web para teste de conhecimentos adquiridos.
 
-![GitHub last commit](https://img.shields.io/github/last-commit/Leonardo-Barcelos/
-flutter_app_clinica_web?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/Leonardo-Barcelos/flutter_app_clinica_web?style=flat-square)
 
 ## Introdução
 
