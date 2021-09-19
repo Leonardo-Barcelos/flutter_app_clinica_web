@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:image_picker_web/image_picker_web.dart';
 
 class UserImagePicker extends StatefulWidget {
   final void Function(File image) onImagePick;
@@ -17,36 +16,36 @@ class UserImagePicker extends StatefulWidget {
 }
 
 class _UserImagePickerState extends State<UserImagePicker> {
-  File? _image;
+  //File? _image;
+  Image? _imagemWeb;
 
-  Future<void> _pickImage() async {
-    final picker = ImagePicker();
-    final pickedImage = await picker.pickImage(
-      source: ImageSource.gallery,
-      imageQuality: 50,
-      maxWidth: 150,
-    );
+  // Future<void> _pickImage() async {
+  //   final picker = ImagePicker();
+  //   final pickedImage = await picker.pickImage(
+  //     source: ImageSource.gallery,
+  //     imageQuality: 50,
+  //     maxWidth: 150,
+  //   );
 
-    if (pickedImage != null) {
-      setState(() {
-        _image = File(pickedImage.path);
-      });
+  //   if (pickedImage != null) {
+  //     setState(() {
+  //       _image = File(pickedImage.path);
+  //     });
 
-      widget.onImagePick(_image!);
-    }
-  }
+  //     widget.onImagePick(_image!);
+  //   }
+  // }
 
   //*! esse daki é do image picker web
-  Image? _fromPicker;
   Future<void> _pickImageWeb() async {
-    await ImagePickerWeb.getImage(outputType: ImageType.widget).then((value) {
-      if (value != null) {
-        print(value);
-      }
-    });
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
     setState(() {
-      //_fromPicker = pickedImage;
-      //_fromPicker = pickedImage as Image?;
+      if (pickedFile != null) {
+        setState(() {
+          _imagemWeb = Image.network(pickedFile.path);
+        });
+      }
     });
   }
 
@@ -57,7 +56,8 @@ class _UserImagePickerState extends State<UserImagePicker> {
         CircleAvatar(
           radius: 40,
           backgroundColor: Colors.grey,
-          backgroundImage: _fromPicker != null ? _fromPicker?.image : null,
+          //backgroundImage: _image != null ? FileImage(_image!) : null, //? qnd é versao app
+          backgroundImage: _imagemWeb?.image,
         ),
         TextButton(
           //onPressed: _pickImage,
