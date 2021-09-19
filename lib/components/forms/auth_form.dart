@@ -5,7 +5,11 @@ import 'package:flutter_app_clinica_web/components/component/user_image_picker.d
 import 'package:flutter_app_clinica_web/core/models/auth_form_data.dart';
 
 class AuthForm extends StatefulWidget {
-  const AuthForm({Key? key}) : super(key: key);
+  final void Function(AuthFormData) onSubmit;
+  const AuthForm({
+    Key? key,
+    required this.onSubmit,
+  }) : super(key: key);
 
   @override
   _AuthFormState createState() => _AuthFormState();
@@ -26,9 +30,7 @@ class _AuthFormState extends State<AuthForm> {
           child: Column(
             children: [
               if (_formData.isSignup)
-                UserImagePicker(
-                  onImagePick: _handleImagePick,
-                ),
+                UserImagePicker(onImagePick: _handleImagePick),
               if (_formData.isSignup)
                 TextFormField(
                   key: const ValueKey('name'),
@@ -72,7 +74,7 @@ class _AuthFormState extends State<AuthForm> {
               ),
               const SizedBox(height: 12),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: _submit,
                 child: Text(_formData.isLogin ? 'Entrar' : 'Cadastrar'),
               ),
               TextButton(
@@ -96,5 +98,25 @@ class _AuthFormState extends State<AuthForm> {
 
   void _handleImagePick(File image) {
     _formData.image = image;
+  }
+
+  void _showError(String msg) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(msg),
+        backgroundColor: Theme.of(context).errorColor,
+      ),
+    );
+  }
+
+  void _submit() {
+    final isValid = _formKey.currentState?.validate() ?? false;
+    if (!isValid) return;
+
+    if (_formData.image == null && _formData.isSignup) {
+      return _showError('Imagem não selecionada!');
+    }
+
+    widget.onSubmit(_formData);
   }
 }

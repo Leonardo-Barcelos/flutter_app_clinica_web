@@ -177,6 +177,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.11.1"
+  platformx:
+    dependency: "direct main"
+    description:
+      name: platformx
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
   plugin_platform_interface:
     dependency: transitive
     description:

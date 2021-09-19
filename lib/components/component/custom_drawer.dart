@@ -16,6 +16,9 @@ class CustomDrawer extends StatelessWidget {
           children: [
             Text(_currentUser!.name),
             const Text('drawer'),
+            IconButton(
+                onPressed: () => AuthService().logout(),
+                icon: const Icon(Icons.exit_to_app))
           ],
         ),
       ),

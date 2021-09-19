@@ -63,6 +63,7 @@ class AuthMockService implements AuthService {
     _updateUser(null);
   }
 
+  @override
   static void _updateUser(UserModel? user) {
     _currentUser = user;
     _controller?.add(_currentUser);

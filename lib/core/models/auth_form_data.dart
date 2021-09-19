@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:flutter/material.dart';
+
 enum AuthMode { signup, login }
 
 class AuthFormData {

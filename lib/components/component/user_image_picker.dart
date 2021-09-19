@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:platformx/platformx.dart';
 
 class UserImagePicker extends StatefulWidget {
   final void Function(File image) onImagePick;
@@ -16,8 +17,8 @@ class UserImagePicker extends StatefulWidget {
 }
 
 class _UserImagePickerState extends State<UserImagePicker> {
-  //File? _image;
   Image? _imagemWeb;
+  File? _image;
 
   // Future<void> _pickImage() async {
   //   final picker = ImagePicker();
@@ -43,10 +44,25 @@ class _UserImagePickerState extends State<UserImagePicker> {
     setState(() {
       if (pickedFile != null) {
         setState(() {
-          _imagemWeb = Image.network(pickedFile.path);
+          if (PlatformX.isWeb) {
+            _imagemWeb = Image.network(pickedFile.path);
+            //ver a questao ainda de transformar em file
+          } else {
+            //CELULARES
+            _image = File(pickedFile.path);
+          }
         });
       }
+      widget.onImagePick(_image!);
     });
+  }
+
+  ImageProvider exibirImagem({Image? imagem, File? imageFile}) {
+    if (PlatformX.isWeb) {
+      return imagem!.image;
+    } else {
+      return FileImage(imageFile!);
+    }
   }
 
   @override
@@ -56,8 +72,9 @@ class _UserImagePickerState extends State<UserImagePicker> {
         CircleAvatar(
           radius: 40,
           backgroundColor: Colors.grey,
-          //backgroundImage: _image != null ? FileImage(_image!) : null, //? qnd é versao app
-          backgroundImage: _imagemWeb?.image,
+          backgroundImage: _image != null
+              ? exibirImagem(imagem: _imagemWeb, imageFile: _image)
+              : null,
         ),
         TextButton(
           //onPressed: _pickImage,
