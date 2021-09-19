@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -29,6 +30,7 @@
   <title>flutter_app_clinica_web</title>
   <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
@@ -97,5 +99,15 @@
       loadMainDartJs();
     }
   </script>
+  <!--                         FIREBASE IMPORTS REQUIRED FOR WEB                        -->
+  <!--FIREBASE_STORAGE-->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+
+  <!--CLOUD_FIRESTORE-->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+
+  <!--FIREBASE_AUTH-->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
 </body>
+
 </html>
