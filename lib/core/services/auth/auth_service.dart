@@ -11,6 +11,7 @@ abstract class AuthService {
     String email,
     String password,
     File? image,
+    String? type,
   );
 
   Future<void> login(
