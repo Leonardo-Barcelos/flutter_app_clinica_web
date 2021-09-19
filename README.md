@@ -17,7 +17,7 @@ Objetivo do projeto é a criação onde esteja presente as seguintes caracterís
 
 
 ### Status do projeto
-- Criação do projeto no Github : <span style="color:green"><strong> finished</strong></span>
+- Criação do projeto no Github : <span style="color:green"><strong> Ok</strong></span>
 - Criação das estruturas de pastas do projeto:<span style="color:orange"><strong> Em andamento...</strong></span>
 - Integração com firebase:<span style="color:orange"><strong> Em andamento...</strong></span>
 - Sistema de login e cadastro de usuário com o firebase:<span style="color:orange"><strong> Em andamento...</strong></span>
