@@ -8,7 +8,7 @@ abstract class UserService {
   Future<void> updateUser();
   Future<void> deleteUser();
 
-  factory UserService() {
-    return UserFirebaseService();
-  }
+  // factory UserService() {
+  //   //return UserFirebaseService();
+  // }
 }
