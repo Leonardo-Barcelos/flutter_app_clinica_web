@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "219280094606",
+    "project_id": "projeto-clinica-web-flutter",
+    "storage_bucket": "projeto-clinica-web-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219280094606:android:512939565acb58d82220df",
+        "android_client_info": {
+          "package_name": "br.com.leonardobarcelos.flutter_app_clinica_web"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "219280094606-1smg8eh7fajgkfg1blob7pvd1olqf2ov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHYZbNQxlXjZYMp7rw5uUY2DHZZ8zrg2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "219280094606-1smg8eh7fajgkfg1blob7pvd1olqf2ov.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
