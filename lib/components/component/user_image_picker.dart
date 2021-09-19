@@ -19,23 +19,7 @@ class UserImagePicker extends StatefulWidget {
 class _UserImagePickerState extends State<UserImagePicker> {
   Image? _imagemWeb;
   File? _image;
-
-  // Future<void> _pickImage() async {
-  //   final picker = ImagePicker();
-  //   final pickedImage = await picker.pickImage(
-  //     source: ImageSource.gallery,
-  //     imageQuality: 50,
-  //     maxWidth: 150,
-  //   );
-
-  //   if (pickedImage != null) {
-  //     setState(() {
-  //       _image = File(pickedImage.path);
-  //     });
-
-  //     widget.onImagePick(_image!);
-  //   }
-  // }
+  bool temImagem = false;
 
   //*! esse daki é do image picker web
   Future<void> _pickImageWeb() async {
@@ -46,20 +30,26 @@ class _UserImagePickerState extends State<UserImagePicker> {
         setState(() {
           if (PlatformX.isWeb) {
             _imagemWeb = Image.network(pickedFile.path);
+            temImagem = false;
             //ver a questao ainda de transformar em file
           } else {
             //CELULARES
             _image = File(pickedFile.path);
+            temImagem = true;
           }
         });
       }
-      widget.onImagePick(_image!);
+      if (PlatformX.isWeb) {
+        widget.onImagePick(File('sem imagem'));
+      } else {
+        widget.onImagePick(_image!);
+      }
     });
   }
 
-  ImageProvider exibirImagem({Image? imagem, File? imageFile}) {
+  ImageProvider exibirImagem({File? imagem, File? imageFile}) {
     if (PlatformX.isWeb) {
-      return imagem!.image;
+      return FileImage(imagem!);
     } else {
       return FileImage(imageFile!);
     }
@@ -69,12 +59,18 @@ class _UserImagePickerState extends State<UserImagePicker> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CircleAvatar(
-          radius: 40,
-          backgroundColor: Colors.grey,
-          backgroundImage: _image != null
-              ? exibirImagem(imagem: _imagemWeb, imageFile: _image)
-              : null,
+        Visibility(
+          visible: PlatformX.isWeb,
+          child: CircleAvatar(
+            radius: 40,
+            backgroundColor: Colors.red,
+            backgroundImage: _imagemWeb?.image,
+          ),
+          replacement: CircleAvatar(
+            radius: 40,
+            backgroundColor: Colors.grey,
+            backgroundImage: _image != null ? FileImage(_image!) : null,
+          ),
         ),
         TextButton(
           //onPressed: _pickImage,

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_clinica_web/components/component/user_image_picker.dart';
 import 'package:flutter_app_clinica_web/core/models/auth_form_data.dart';
+import 'package:platformx/platformx.dart';
 
 class AuthForm extends StatefulWidget {
   final void Function(AuthFormData) onSubmit;
@@ -97,7 +98,12 @@ class _AuthFormState extends State<AuthForm> {
   }
 
   void _handleImagePick(File image) {
-    _formData.image = image;
+    //! TEMPORARIO
+    if (PlatformX.isWeb) {
+      _formData.image = File('SEM IMAGEM AINDA NO WEB');
+    } else {
+      _formData.image = image;
+    }
   }
 
   void _showError(String msg) {
