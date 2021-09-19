@@ -2,7 +2,8 @@
 
 Um projeto flutter web para teste de conhecimentos adquiridos.
 
-![GitHub last commit](https://img.shields.io/github/last-commit/Leonardo-Barcelos/projeto_clinica_web?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/Leonardo-Barcelos/
+flutter_app_clinica_web?style=flat-square)
 
 ## Introdução
 
@@ -17,10 +18,10 @@ Objetivo do projeto é a criação onde esteja presente as seguintes caracterís
 
 
 ### Status do projeto
-- Criação do projeto no Github : <span style="color:green"><strong> OK</strong></span>
+- Criação do projeto no Github : <span style="color:green"><strong> finished</strong></span>
 - Criação das estruturas de pastas do projeto:<span style="color:orange"><strong> Em andamento...</strong></span>
-- Integração com firebase:<span style="color:blue"><strong></strong></span>
-- Sistema de login e cadastro de usuário com o firebase:<span style="color:blue"><strong></strong></span>
+- Integração com firebase:<span style="color:orange"><strong> Em andamento...</strong></span>
+- Sistema de login e cadastro de usuário com o firebase:<span style="color:orange"><strong> Em andamento...</strong></span>
 - Sistema de diferenciação de telas para cada tipo de usuário:<span style="color:blue"><strong></strong></span>
     - Tela da atendente:<span style="color:blue"><strong></strong></span>
     - Tela do médico:<span style="color:blue"><strong></strong></span>
