@@ -40,6 +40,16 @@ dependencies:
   # Platform
   platformx: ^1.1.0
 
+  # Online Storage For Files
+  firebase_storage: ^10.0.3
+
+  # Online Database for Data
+  cloud_firestore: ^2.5.3
+
+  # Add Authentication such as Google SignIn, Facebook, Apple SignIn, Phone Auth etc
+  firebase_auth: ^3.1.1
+
+
 
 
 dev_dependencies:
