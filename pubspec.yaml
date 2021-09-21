@@ -49,6 +49,12 @@ dependencies:
   # Add Authentication such as Google SignIn, Facebook, Apple SignIn, Phone Auth etc
   firebase_auth: ^3.1.1
 
+  # A scaffold class with a sideBar that works with a appBar.
+  flutter_admin_scaffold: ^1.0.0
+
+  # Customizable Flutter calendar inspired by Google Calendar app.
+  cr_calendar: ^0.0.8
+
 
 
 
@@ -75,9 +81,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/user_image.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

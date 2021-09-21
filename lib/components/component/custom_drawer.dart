@@ -11,14 +11,33 @@ class CustomDrawer extends StatelessWidget {
     return Drawer(
       child: SafeArea(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/user_image.png'),
+                maxRadius: 50,
+              ),
+            ),
             Text(_currentUser!.name),
-            const Text('drawer'),
-            IconButton(
-                onPressed: () => AuthService().logout(),
-                icon: const Icon(Icons.exit_to_app))
+            const Divider(),
+            ListTile(
+              leading: const Icon(Icons.info),
+              title: const Text('Informações'),
+              onTap: () {},
+            ),
+            const Divider(),
+            ListTile(
+              leading: const Icon(Icons.manage_accounts),
+              title: const Text('Configurações'),
+              onTap: () {},
+            ),
+            const Divider(),
+            ListTile(
+              leading: const Icon(Icons.exit_to_app),
+              title: const Text('Sair'),
+              onTap: () => AuthService().logout(),
+            ),
           ],
         ),
       ),
