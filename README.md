@@ -53,7 +53,7 @@ Objetivo do projeto é a criação onde esteja presente as seguintes caracterís
     - Exclusão dos dados:<span style="color:blue"><strong></strong></span>
 
  ### Imagens do projeto
-    (Imagens  apenas para fins de demostração, não representam o projeto final!!!)
+    (Imagens e cores  apenas para fins de demostração, não representam o projeto final!!!)
  ## Tela de login e cadastro
 ![loginCadastro](https://user-images.githubusercontent.com/56855137/134779030-ec44b3b0-484f-4a5f-b112-d73d6f0788a5.gif)
  ## Tela inicial versão web
