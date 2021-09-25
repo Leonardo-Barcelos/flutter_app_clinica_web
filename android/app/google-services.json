@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "219280094606",
+    "firebase_url": "https://projeto-clinica-web-flutter-default-rtdb.firebaseio.com",
     "project_id": "projeto-clinica-web-flutter",
     "storage_bucket": "projeto-clinica-web-flutter.appspot.com"
   },
