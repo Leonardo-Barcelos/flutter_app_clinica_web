@@ -53,4 +53,15 @@ Objetivo do projeto é a criação onde esteja presente as seguintes caracterís
     - Exclusão dos dados:<span style="color:blue"><strong></strong></span>
 
  ### Imagens do projeto
- ![teste](https://user-images.githubusercontent.com/56855137/133663617-cfdf686c-47fa-4f3c-9ed0-226bb2440ac1.png)   
+    (Imagens  apenas para fins de demostração, não representam o projeto final!!!)
+ ## Tela de login e cadastro
+![loginCadastro](https://user-images.githubusercontent.com/56855137/134779030-ec44b3b0-484f-4a5f-b112-d73d6f0788a5.gif)
+ ## Tela inicial versão web
+ ![image](https://user-images.githubusercontent.com/56855137/134779624-cdfb22e3-cc24-4930-9a07-e58ca77d4950.png)
+## Tela de pacientes
+![image](https://user-images.githubusercontent.com/56855137/134779474-a7f08220-fd98-461a-afc5-8099315be5f5.png)
+## Formulário para cadastro de pacientes
+![image](https://user-images.githubusercontent.com/56855137/134779503-189d6c06-d398-4f6f-aaf9-44d828f257a3.png)
+
+## Exemplo de como ficará tela de agenda
+![image](https://user-images.githubusercontent.com/56855137/134779556-8ed5d586-56a9-46ae-843f-a34e74f6cce5.png)

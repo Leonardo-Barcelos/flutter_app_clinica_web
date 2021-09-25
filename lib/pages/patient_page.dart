@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_clinica_web/components/component/patient_component.dart';
+import 'package:flutter_app_clinica_web/components/component/patient_item.dart';
 import 'package:flutter_app_clinica_web/utils/app_routes.dart';
 
 class PatientPage extends StatefulWidget {
@@ -20,29 +20,23 @@ class _PatientPageState extends State<PatientPage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextButton(
+              const PatientItem(name: 'Leonardo Peixoto'),
+              const PatientItem(name: 'Henrique da Silva'),
+              const PatientItem(name: 'Claudia Araia '),
+              const PatientItem(name: 'Fernanda Monte Negro'),
+              const PatientItem(name: 'Ben Daniels'),
+              const PatientItem(name: 'Marco Aurelio de Souza'),
+              const PatientItem(name: 'Pedro Paulo da Silva Junior'),
+              const PatientItem(name: 'Pedro de Alcântara Francisco'),
+              const PatientItem(name: 'Antônio João Carlos Xavier de Paula'),
+              const PatientItem(name: 'Serafim de Bragança e Bourbon'),
+              const SizedBox(height: 50),
+              ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pushNamed(AppRoutes.PATIENTS_ADD);
                 },
-                child: Text('Adicionar paciente'),
-              ),
-              ListTile(
-                leading: Text('Ola'),
-              ),
-              ListTile(
-                leading: Text('Ola'),
-              ),
-              ListTile(
-                leading: Text('Ola'),
-              ),
-              ListTile(
-                leading: Text('Ola'),
-              ),
-              ListTile(
-                leading: Text('Ola'),
+                child: const Text('Adicionar paciente'),
               ),
             ],
           ),

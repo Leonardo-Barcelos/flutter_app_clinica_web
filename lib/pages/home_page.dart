@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'package:flutter_app_clinica_web/components/component/item_overview.dart';
+import 'package:flutter_app_clinica_web/core/services/auth/auth_service.dart';
 import 'package:flutter_app_clinica_web/utils/app_routes.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,20 +10,21 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AdminScaffold(
-      appBar: AppBar(title: const Text('Projeto Clínica')),
+      appBar: AppBar(
+        title: const Text('Projeto Clínica'),
+        centerTitle: true,
+      ),
       sideBar: _sideBar(context),
-      body: _myBody(),
+      body: _myBody(context),
     );
   }
 
-  Widget _myBody() {
+  Widget _myBody(BuildContext context) {
     return GridView(
         padding: const EdgeInsets.all(10.0),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 100 / 50,
-          crossAxisSpacing: 0.0,
-          mainAxisSpacing: 0.0,
         ),
         children: const [
           ItemOverview(
@@ -42,7 +44,7 @@ class HomePage extends StatelessWidget {
             name: 'Adicionar Paciente',
             image: 'assets/person_add.png',
             routeName: AppRoutes.PATIENTS_ADD,
-          ),
+          )
         ]);
   }
 
@@ -83,7 +85,9 @@ class HomePage extends StatelessWidget {
       footer: ListTile(
         leading: const Icon(Icons.exit_to_app),
         title: const Text('SAIR'),
-        onTap: () {},
+        onTap: () {
+          AuthService().logout();
+        },
       ),
     );
   }
