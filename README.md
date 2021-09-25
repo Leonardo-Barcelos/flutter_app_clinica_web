@@ -19,33 +19,33 @@ Objetivo do projeto é a criação onde esteja presente as seguintes caracterís
 ### Status do projeto
 - Criação do projeto no Github : <span style="color:green"><strong> Ok</strong></span>
 - Criação das estruturas de pastas do projeto:<span style="color:orange"><strong>Ok</strong></span>
-- Integração com firebase:<span style="color:orange"><strong> Em andamento...</strong></span>
-- Sistema de login e cadastro de usuário com o firebase:<span style="color:orange"><strong> Em andamento...</strong></span>
-- Sistema de diferenciação de telas para cada tipo de usuário:<span style="color:blue"><strong>Em andamento...</strong></span>
-    - Tela da atendente:<span style="color:blue"><strong>Em andamento...</strong></span>
-    - Tela do médico:<span style="color:blue"><strong>Em andamento...</strong></span>
+- Integração com firebase:<span style="color:orange"><strong>OK</strong></span>
+- Sistema de login e cadastro de usuário com o firebase:<span style="color:orange"><strong>OK</strong></span>
+- Sistema de diferenciação de telas para cada tipo de usuário:<span style="color:blue"><strong>OK</strong></span>
+    - Tela da atendente:<span style="color:blue"><strong>OK</strong></span>
+    - Tela do médico:<span style="color:blue"><strong>OK</strong></span>
 
-- CRUD de pacientes:<span style="color:blue"></span>
-    - Cadastro:<span style="color:blue"></span>
+- CRUD de pacientes:<span style="color:blue">Em andamento...</span>
+    - Cadastro:<span style="color:blue">Em andamento...</span>
     - Cadastro com imagem:<span style="color:blue"><strong></strong></span>
-    - Trazer dados do usuário:<span style="color:blue"><strong></strong></span>
-    - Trazer a imagem do usuário:<span style="color:blue"><strong></strong></span>
-    - Atualizar dados do usuário:<span style="color:blue"><strong></strong></span>
+    - Trazer dados do usuário:<span style="color:blue"><strong>Em andamento...</strong></span>
+    - Trazer a imagem do usuário:<span style="color:blue"><strong>Em andamento...</strong></span>
+    - Atualizar dados do usuário:<span style="color:blue"><strong>Em andamento...</strong></span>
     - Atualizar a imagem do usuário:<span style="color:blue"><strong></strong></span>
-    - Exclusão do usuário:<span style="color:blue"><strong></strong></span>
-    - Exclusão da imagem do usuário:<span style="color:blue"><strong></strong></span>
+    - Exclusão do usuário:<span style="color:blue"><strong></strong>Em andamento...</span>
+    - Exclusão da imagem do usuário:<span style="color:blue"><strong>Em andamento...</strong></span>
 
-- CRUD de consultas:<span style="color:blue"><strong></strong></span>
-    - Cadastro:<span style="color:blue"><strong></strong></span>
-    - Cadastro utilizando o calendário:<span style="color:blue"><strong></strong></span>
-    - Leitura dos dados:<span style="color:blue"><strong></strong></span>
-    - Leitura dos dados com o calendário:<span style="color:blue"></span>
+- CRUD de consultas:<span style="color:blue"><strong>Em andamento...</strong></span>
+    - Cadastro:<span style="color:blue"><strong>Em andamento...</strong></span>
+    - Cadastro utilizando o calendário:<span style="color:blue"><strong>Em andamento...</strong></span>
+    - Leitura dos dados:<span style="color:blue"><strong>Em andamento...</strong></span>
+    - Leitura dos dados com o calendário:<span style="color:blue">Em andamento...</span>
     - Atualização dos dados:<span style="color:blue"><strong></strong></span>
     - Atualização dos dados com o calendário:<span style="color:blue"><strong></strong></span>
     - Exclusão dos dados:<span style="color:blue"><strong></strong></span>
     - Exclusão dos dados com o calendário:<span style="color:blue"><strong></strong></span>
 
-- Utilização do calendário:<span style="color:blue"><strong></strong></span>
+- Utilização do calendário:<span style="color:blue"><strong>Em andamento...</strong></span>
 - CRUD de anotações do médico por paciente:<span style="color:blue"><strong></strong></span>
     - Cadastro:<span style="color:blue"><strong></strong></span>
     - Leitura dos dados:<span style="color:blue"><strong></strong></span>
