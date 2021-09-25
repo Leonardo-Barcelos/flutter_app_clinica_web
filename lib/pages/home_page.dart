@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'package:flutter_app_clinica_web/components/component/item_overview.dart';
+import 'package:flutter_app_clinica_web/utils/app_routes.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,17 +20,29 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 2 / 3,
-          crossAxisSpacing: 1,
-          mainAxisSpacing: 1,
+          childAspectRatio: 100 / 50,
+          crossAxisSpacing: 0.0,
+          mainAxisSpacing: 0.0,
         ),
         children: const [
-          // ItemOverview(name: 'Agenda'),
-          // ItemOverview(name: 'Consultas'),
-          // ItemOverview(name: 'Pacientes'),
-          // ItemOverview(name: 'Adicionar Paciente'),
-          // ItemOverview(name: 'teste 5'),
-          // ItemOverview(name: 'teste 6'),
+          ItemOverview(
+            name: 'Agenda',
+            image: 'assets/calendar.png',
+          ),
+          ItemOverview(
+            name: 'Consultas',
+            image: 'assets/consult.png',
+          ),
+          ItemOverview(
+            name: 'Pacientes',
+            image: 'assets/person.png',
+            routeName: AppRoutes.PATIENTS,
+          ),
+          ItemOverview(
+            name: 'Adicionar Paciente',
+            image: 'assets/person_add.png',
+            routeName: AppRoutes.PATIENTS_ADD,
+          ),
         ]);
   }
 
@@ -57,12 +70,7 @@ class HomePage extends StatelessWidget {
           icon: Icons.settings,
         ),
       ],
-      onSelected: (item) {
-        // if (item.route != null) {
-        //   Navigator.of(context).pushNamed(item.route!);
-        // }
-        print(item.title);
-      },
+      onSelected: (item) {},
       header: Container(
         height: 50,
         width: double.infinity,

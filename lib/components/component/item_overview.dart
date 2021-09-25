@@ -1,33 +1,37 @@
 import 'package:flutter/material.dart';
 
 class ItemOverview extends StatelessWidget {
-  final Icon? icon;
+  final String? image;
   final String name;
-  const ItemOverview({
-    Key? key,
-    required this.name,
-    this.icon,
-  }) : super(key: key);
+  final String? routeName;
+  const ItemOverview(
+      {Key? key, required this.name, required this.image, this.routeName})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GridTile(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 100,
-            width: 100,
-            child: Container(
-              padding: const EdgeInsets.all(8.0),
-              child: const Image(
-                image: AssetImage('assets/user_image.png'),
+    return GestureDetector(
+      child: GridTile(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 75,
+              width: 75,
+              child: Container(
+                padding: const EdgeInsets.all(8.0),
+                child: Image(
+                  image: AssetImage(image!),
+                ),
               ),
             ),
-          ),
-          Text(name),
-        ],
+            Text(name),
+          ],
+        ),
       ),
+      onTap: () {
+        Navigator.of(context).pushNamed(routeName!);
+      },
     );
   }
 }

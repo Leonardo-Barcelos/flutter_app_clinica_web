@@ -12,7 +12,7 @@ class AuthPage extends StatefulWidget {
 }
 
 class _AuthPageState extends State<AuthPage> {
-  late bool _isLoading;
+  bool _isLoading = false;
 
   Future<void> _handleSubmit(AuthFormData formData) async {
     try {
@@ -42,7 +42,6 @@ class _AuthPageState extends State<AuthPage> {
 
   @override
   Widget build(BuildContext context) {
-    _isLoading = false;
     return Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,

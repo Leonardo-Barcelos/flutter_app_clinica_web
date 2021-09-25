@@ -47,6 +47,7 @@ android {
         applicationId "br.com.leonardobarcelos.flutter_app_clinica_web"
         minSdkVersion 16
         targetSdkVersion 30
+        multiDexEnabled = true
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
