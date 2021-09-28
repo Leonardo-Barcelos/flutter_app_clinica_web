@@ -16,6 +16,7 @@ class PatientForm extends StatefulWidget {
 class _UserFormState extends State<PatientForm> {
   final _formKey = GlobalKey<FormState>();
   final _formData = PatientFormData();
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -32,6 +33,7 @@ class _UserFormState extends State<PatientForm> {
                     TextFormField(
                       key: const ValueKey('nome'),
                       initialValue: _formData.name,
+                      onChanged: (_name) => _formData.name = _name,
                       decoration: const InputDecoration(
                         labelText: 'Nome',
                         prefixIcon: Icon(Icons.person),
@@ -48,6 +50,7 @@ class _UserFormState extends State<PatientForm> {
                     TextFormField(
                       key: const ValueKey('rg'),
                       initialValue: _formData.rg,
+                      onChanged: (_rg) => _formData.rg = _rg,
                       decoration: const InputDecoration(
                         labelText: 'RG',
                         prefixIcon: Icon(Icons.person),
@@ -63,6 +66,7 @@ class _UserFormState extends State<PatientForm> {
                     TextFormField(
                       key: const ValueKey('cpf'),
                       initialValue: _formData.cpf,
+                      onChanged: (_cpf) => _formData.cpf = _cpf,
                       decoration: const InputDecoration(
                         labelText: 'CPF',
                         prefixIcon: Icon(Icons.person),
@@ -79,6 +83,7 @@ class _UserFormState extends State<PatientForm> {
                     TextFormField(
                       key: const ValueKey('telefone'),
                       initialValue: _formData.phone,
+                      onChanged: (_phone) => _formData.phone = _phone,
                       decoration: const InputDecoration(
                         labelText: 'Telefone',
                         prefixIcon: Icon(Icons.phone),
@@ -95,6 +100,7 @@ class _UserFormState extends State<PatientForm> {
                     TextFormField(
                       key: const ValueKey('endereço'),
                       initialValue: _formData.adress,
+                      onChanged: (_adress) => _formData.adress = _adress,
                       decoration: const InputDecoration(
                         labelText: 'Endereço',
                         prefixIcon: Icon(Icons.place),
@@ -132,11 +138,7 @@ class _UserFormState extends State<PatientForm> {
           fontWeight: FontWeight.bold,
         ),
       ),
-      onPressed: () {
-        setState(() {
-          _formData.toggleAuthMode();
-        });
-      },
+      onPressed: _submit,
     );
   }
 

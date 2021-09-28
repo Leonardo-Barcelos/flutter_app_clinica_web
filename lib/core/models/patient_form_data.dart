@@ -1,4 +1,4 @@
-enum AuthMode { create, update }
+enum PageMode { read, create, update }
 
 class PatientFormData {
   String name = '';
@@ -6,17 +6,21 @@ class PatientFormData {
   String cpf = '';
   String phone = '';
   String adress = '';
-  AuthMode _mode = AuthMode.create;
+  PageMode _mode = PageMode.create;
 
   bool get isCreate {
-    return _mode == AuthMode.create;
+    return _mode == PageMode.create;
   }
 
   bool get isUpdate {
-    return _mode == AuthMode.update;
+    return _mode == PageMode.update;
+  }
+
+  bool get isRead {
+    return _mode == PageMode.read;
   }
 
   void toggleAuthMode() {
-    _mode = isCreate ? AuthMode.update : AuthMode.create;
+    _mode = isCreate ? PageMode.update : PageMode.create;
   }
 }

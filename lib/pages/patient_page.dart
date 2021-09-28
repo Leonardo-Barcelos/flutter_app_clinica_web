@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_clinica_web/components/component/patient_item.dart';
-import 'package:flutter_app_clinica_web/utils/app_routes.dart';
+import 'package:flutter_app_clinica_web/core/models/patient_model.dart';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PatientPage extends StatefulWidget {
   const PatientPage({Key? key}) : super(key: key);
@@ -10,6 +12,13 @@ class PatientPage extends StatefulWidget {
 }
 
 class _PatientPageState extends State<PatientPage> {
+  //Pegando direto do firebase
+  //! Corrigir depois para passar pelo service;
+  var snapshots = FirebaseFirestore.instance
+      .collection('patients')
+      .orderBy('name') //Ordenando pelo nome
+      .snapshots();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,31 +26,48 @@ class _PatientPageState extends State<PatientPage> {
         centerTitle: true,
         title: const Text('Pacientes'),
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const PatientItem(name: 'Leonardo Peixoto'),
-              const PatientItem(name: 'Henrique da Silva'),
-              const PatientItem(name: 'Claudia Araia '),
-              const PatientItem(name: 'Fernanda Monte Negro'),
-              const PatientItem(name: 'Ben Daniels'),
-              const PatientItem(name: 'Marco Aurelio de Souza'),
-              const PatientItem(name: 'Pedro Paulo da Silva Junior'),
-              const PatientItem(name: 'Pedro de Alcântara Francisco'),
-              const PatientItem(name: 'Antônio João Carlos Xavier de Paula'),
-              const PatientItem(name: 'Serafim de Bragança e Bourbon'),
-              const SizedBox(height: 50),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed(AppRoutes.PATIENTS_ADD);
-                },
-                child: const Text('Adicionar paciente'),
-              ),
-            ],
-          ),
-        ),
-      ),
+      body: body(),
+    );
+  }
+
+  Widget body() {
+    return StreamBuilder(
+      stream: snapshots,
+      builder: (BuildContext ctx, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Center(child: Text('Error: ${snapshot.error}'));
+        }
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        if (snapshot.data!.docs.isEmpty) {
+          return const Center(child: Text('Nenhuma tarefa ainda'));
+        }
+        return ListView.builder(
+          itemCount: snapshot.data!.docs.length,
+          itemBuilder: (BuildContext context, int i) {
+            var doc = snapshot.data!.docs[i];
+            //var item = doc.data;
+            PatientModel patientWeb = PatientModel(
+              id: doc['id'],
+              name: doc['name'],
+              adress: doc['adress'],
+              phone: doc['phone'],
+            );
+
+            return Column(
+              children: [
+                const Divider(),
+                PatientItem(
+                  name: doc['name'],
+                  patient: patientWeb,
+                ),
+                const Divider(),
+              ],
+            );
+          },
+        );
+      },
     );
   }
 }

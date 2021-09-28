@@ -86,6 +86,7 @@ class AuthFirebaseService implements AuthService {
     });
   }
 
+  // ignore: unused_element
   static UserModel _toChatUser(User user, [String? name, String? imageURL]) {
     return UserModel(
       id: user.uid,

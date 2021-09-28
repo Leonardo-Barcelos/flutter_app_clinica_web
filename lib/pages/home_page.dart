@@ -30,9 +30,10 @@ class HomePage extends StatelessWidget {
           ItemOverview(
             name: 'Agenda',
             image: 'assets/calendar.png',
+            routeName: AppRoutes.AGENDA,
           ),
           ItemOverview(
-            name: 'Consultas',
+            name: 'Consultas hoje',
             image: 'assets/consult.png',
           ),
           ItemOverview(
@@ -51,28 +52,41 @@ class HomePage extends StatelessWidget {
   SideBar _sideBar(BuildContext context) {
     return SideBar(
       backgroundColor: const Color.fromARGB(1, 254, 254, 254),
-      iconColor: const Color.fromRGBO(80, 80, 80, 100),
+      //iconColor: const Color.fromRGBO(80, 80, 80, 100),
       textStyle:
           const TextStyle(color: Color.fromRGBO(80, 80, 80, 100), fontSize: 12),
       selectedRoute: '/',
       items: const [
         MenuItem(
           title: 'Perfil',
-          route: '',
+          route: AppRoutes.PROFILE,
           icon: Icons.person,
         ),
         MenuItem(
           title: 'Contato',
-          route: '',
+          route: AppRoutes.CONTACT,
           icon: Icons.info,
         ),
         MenuItem(
           title: 'Configurações',
-          route: '',
+          route: AppRoutes.CONFIG,
           icon: Icons.settings,
         ),
       ],
-      onSelected: (item) {},
+      onSelected: (item) {
+        //config
+        if (item.route == AppRoutes.CONFIG) {
+          Navigator.of(context).pushNamed(AppRoutes.CONFIG);
+        }
+        //contato
+        if (item.route == AppRoutes.CONTACT) {
+          Navigator.of(context).pushNamed(AppRoutes.CONTACT);
+        }
+        //perfil
+        if (item.route == AppRoutes.PROFILE) {
+          Navigator.of(context).pushNamed(AppRoutes.PROFILE);
+        }
+      },
       header: Container(
         height: 50,
         width: double.infinity,
